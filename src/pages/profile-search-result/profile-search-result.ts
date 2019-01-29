@@ -52,10 +52,17 @@ export class ProfileSearchResultPage {
       console.log(`Profile Search Page -> ${JSON.stringify(this.username)}`);
     }
 
+    // this.webIntent.startActivity({
+    //   package: 'com.android.chrome',
+    //   url: 'http://www.google.com',
+    //   action: this.webIntent.ACTION_VIEW
+    // }).then((intent) => {
+    //   console.log (` WebIntent Bus : ${intent}`);
+    // });
+
     this.webIntent.startActivity({
-      package: 'com.android.chrome',
-      url: 'http://www.google.com',
-      action: this.webIntent.ACTION_VIEW
+      type: 'image/*',
+      action: this.webIntent.ACTION_GET_CONTENT
     }).then((intent) => {
       console.log (` WebIntent Bus : ${intent}`);
     })
